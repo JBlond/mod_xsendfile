@@ -257,9 +257,7 @@ static apr_status_t ap_xsendfile_get_filepath(request_rec *r,
     if (root) {
       xsendfile_path_t *newpath;
 
-#ifdef _DEBUG
-      ap_log_error(APLOG_MARK, APLOG_DEBUG, 0, r->server, "xsendfile: path is %s", root);
-#endif
+      ap_log_rerror(APLOG_MARK, APLOG_TRACE2, 0, r, "xsendfile: path is %s", root);
 
       patharr = apr_array_make(
         r->pool,
