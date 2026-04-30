@@ -208,36 +208,4 @@ See the License for the specific language governing permissions and limitations 
 
 ## Changes
 
-### Version 0.12
-
-- Now incorrect headers will be dropped early
-
-### Version 0.11.1
-
-- Fixed some documentation bugs
-- Built win32 binaries against latest httpd using MSVC9
-- Updated MSVC Project files
-
-### Version 0.11
-
-- Fixed large file support
-
-### Version 0.10
-
-- Won't override Etag/Last-Modified if already set.
-- New Configuration directive: XSendFileIgnoreEtag
-- New Configuration directive: XSendFileIgnoreLastModified
-- New Configuration directive: XSendFilePath
-- Removed Configuration directive: XSendFileAllowAbove
-- Use XSendFilePath instead.
-- Improved header handling for FastCGI/CGI output (removing duplicate headers).
-
-### Version 0.9
-
-- New configuration directive: XSendFileAllowAbove
-- Initial FastCGI/CGI support
-- Filter only added when needed
-
-### Version 0.8
-
-- This is the initial public release.
+[Changelog](CHANGELOG.md)
