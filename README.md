@@ -70,6 +70,17 @@ This is helpful for applications that will generate such headers even for empty 
 Setting `XSendFileIgnoreLastModified on` will ignore all Last-Modified headers the original output handler may have set.
 This is helpful for applications that will generate such headers even for empty content.
 
+### XSendFileUnsetContentEncoding
+
+| Description| Unsets the Content-Encoding header                |
+|------------|---------------------------------------------------|
+| Syntax     | XSendFileUnsetContentEncoding on\|off             |
+| Default    | XSendFileIgnoreLastModified on                    |
+| Context    | server config, virtual host, directory, .htaccess |
+
+Setting `XSendFileUnsetContentEncoding on` Unsets the Content-Encoding header.
+The Content-Encoding header - if present - will be dropped, as the module cannot know if it was set by intention of the programmer or the handler. E.g. php with output compression enabled will set this header, but the replacement file send via mod_xsendfile is most likely not compressed.​
+
 ### XSendFilePath
 
 | Description| White-list more paths                  |
