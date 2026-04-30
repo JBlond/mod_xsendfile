@@ -1,8 +1,8 @@
-# mod_xsendfile for Apache2/Apache2.2
+# mod_xsendfile for Apache 2
 
 ## Overview
 
-mod_xsendfile is a small Apache2 module that processes X-SENDFILE headers registered by the original output handler.
+mod_xsendfile is a small Apache 2 module that processes X-SENDFILE headers registered by the original output handler.
 
 If it encounters the presence of such header it will discard all output and send the file specified by that header instead using Apache internals including all optimizations like caching-headers and sendfile or mmap if configured.
 
