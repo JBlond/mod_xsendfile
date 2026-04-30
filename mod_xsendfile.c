@@ -487,7 +487,8 @@ static apr_status_t ap_xsendfile_output_filter(ap_filter_t *f, apr_bucket_brigad
     }
 #endif
   /* stat (for etag/cache/content-length stuff) */
-  if ((rv = apr_file_info_get(&finfo, APR_FINFO_NORM, fd)) != APR_SUCCESS) {
+ if ((rv = apr_file_info_get(&finfo, APR_FINFO_NORM, fd)) != APR_SUCCESS &&
+    (rv = apr_file_info_get(&finfo, APR_FINFO_NORM, fd)) != APR_INCOMPLETE) {
     ap_log_rerror(
       APLOG_MARK,
       APLOG_ERR,
